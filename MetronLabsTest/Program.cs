@@ -126,6 +126,13 @@ namespace MetronLabsTest
             }
             return null;
         }
+
+        public bool IsEmpty()
+        {
+            if (Head == null) { return true; }
+
+            return false;
+        }
     }
 
 
@@ -134,11 +141,16 @@ namespace MetronLabsTest
         static void Main(string[] args)
         {
             LinkedList linkedList = new LinkedList();
-            
+
+            //Checking if empty
+            Console.WriteLine("List Empty? : " + linkedList.IsEmpty());
+
             for (int i = 0; i < 10; i++)
             {
                 linkedList.AddNode(new Node(i*10));
             }
+            Console.WriteLine("-----------------------");
+
 
             //Show list
             Console.WriteLine("Original List: ");
@@ -185,7 +197,9 @@ namespace MetronLabsTest
             linkedList.DisplayReverseLinkedList();
 
             Console.WriteLine("-----------------------");
-            
+            //Checking if empty
+            Console.WriteLine("List Empty? : " + linkedList.IsEmpty());
+
             Console.ReadKey();
         }
     }
