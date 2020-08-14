@@ -52,26 +52,33 @@ namespace MetronLabsTest
             }
         }
 
-        public void DisplayLinkedList()
+        public string DisplayLinkedList()
         {
+            string result = "";
+
             Node currentNode = Head;
             while (currentNode != null)
             {
-                Console.Write(currentNode.Data + " -> ");
+                result += currentNode.Data + " -> ";
                 currentNode = currentNode.NextNode;
             }
-            Console.Write("null\r\n");
+            result += "null\r\n";
+            return result;
         }
 
-        public void DisplayReverseLinkedList()
+        public string DisplayReverseLinkedList()
         {
+            string result = "";
+
             Node currentNode = Tail;
             while (currentNode != null)
             {
-                Console.Write(currentNode.Data + " -> ");
+                result += currentNode.Data + " -> ";
                 currentNode = currentNode.PrevNode;
             }
-            Console.Write("null\r\n");
+            result += "null\r\n";
+
+            return result;
         }
 
         public void DeleteNode(int data)
@@ -153,14 +160,13 @@ namespace MetronLabsTest
 
 
             //Show list
-            Console.WriteLine("Original List: ");
-            linkedList.DisplayLinkedList();
+            Console.WriteLine("Original List: \r\n" + linkedList.DisplayLinkedList());
+            
 
             Console.WriteLine("-----------------------");
 
             //Show list
-            Console.WriteLine("Reverse List: ");
-            linkedList.DisplayReverseLinkedList();
+            Console.WriteLine("Reverse List: \r\n" + linkedList.DisplayReverseLinkedList());
 
             Console.WriteLine("-----------------------");
             Console.WriteLine("Get Node Method Test");
@@ -175,27 +181,23 @@ namespace MetronLabsTest
             Console.WriteLine("Delete Node : ");
             linkedList.DeleteNode(40);
 
-            Console.WriteLine("After Delete : ");
-            linkedList.DisplayLinkedList();
+            Console.WriteLine("After Delete : \r\n" + linkedList.DisplayLinkedList());
 
             Console.WriteLine("-----------------------");
             Console.WriteLine("Delete Head Node : ");
             linkedList.DeleteNode(0);
 
-            Console.WriteLine("After Delete : ");
-            linkedList.DisplayLinkedList();
+            Console.WriteLine("After Delete : \r\n" + linkedList.DisplayLinkedList());
 
             Console.WriteLine("-----------------------");
             Console.WriteLine("Delete Head Node : ");
             linkedList.DeleteNode(90);
 
-            Console.WriteLine("After Delete : ");
-            linkedList.DisplayLinkedList();
-            
-            //Show list
-            Console.WriteLine("Reverse List: ");
-            linkedList.DisplayReverseLinkedList();
+            Console.WriteLine("After Delete : \r\n" + linkedList.DisplayLinkedList());
 
+            //Show list
+            Console.WriteLine("Reverse List: \r\n" + linkedList.DisplayReverseLinkedList());
+           
             Console.WriteLine("-----------------------");
             //Checking if empty
             Console.WriteLine("List Empty? : " + linkedList.IsEmpty());

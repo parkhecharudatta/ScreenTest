@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetronLabsTest", "MetronLabsTest\MetronLabsTest.csproj", "{FACACA47-FD25-4875-8A23-C7BEC132446A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestSuite", "UnitTestSuite\UnitTestSuite.csproj", "{F3C3E5E5-0F58-425B-886B-1AF2B9A2C5DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FACACA47-FD25-4875-8A23-C7BEC132446A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FACACA47-FD25-4875-8A23-C7BEC132446A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FACACA47-FD25-4875-8A23-C7BEC132446A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C3E5E5-0F58-425B-886B-1AF2B9A2C5DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C3E5E5-0F58-425B-886B-1AF2B9A2C5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C3E5E5-0F58-425B-886B-1AF2B9A2C5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C3E5E5-0F58-425B-886B-1AF2B9A2C5DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
