@@ -24,10 +24,12 @@ namespace MetronLabsTest
     public class LinkedList
     {
         public Node Head { get; private set; }
+        public Node Tail { get; private set; }
 
         public LinkedList()
         {
             Head = null;
+            Tail = null;
         }
 
         public void AddNode(Node node)
@@ -35,25 +37,38 @@ namespace MetronLabsTest
             if (Head == null)
             {
                 Head = node;
+                Tail = Head;
             }
             else
             {
-                Node tempNode = Head;
-                while (tempNode.NextNode != null)
+                Node currentNode = Head;
+                while (currentNode.NextNode != null)
                 {
-                    tempNode = tempNode.NextNode;
+                    currentNode = currentNode.NextNode;
                 }
-                tempNode.NextNode = node;
+                node.PrevNode = currentNode;
+                currentNode.NextNode = node;
+                Tail = node;
             }
         }
 
         public void DisplayLinkedList()
         {
-            Node tempNode = Head;
-            while (tempNode != null)
+            Node currentNode = Head;
+            while (currentNode != null)
             {
-                Console.WriteLine(tempNode.Data);
-                tempNode = tempNode.NextNode;
+                Console.WriteLine(currentNode.Data);
+                currentNode = currentNode.NextNode;
+            }
+        }
+
+        public void DisplayReverseLinkedList()
+        {
+            Node currentNode = Tail;
+            while (currentNode != null)
+            {
+                Console.WriteLine(currentNode.Data);
+                currentNode = currentNode.PrevNode;
             }
         }
 
@@ -70,14 +85,22 @@ namespace MetronLabsTest
                 return;
             }
 
+            if (Tail.Data == data)
+            {
+                Console.WriteLine(Tail.Data);
+                Tail = Tail.PrevNode;
+                return;
+            }
+
             while (currentNode != null)
             {
                 if (currentNode.Data == data)
                 {
                     Console.WriteLine($"Deleting... {currentNode.Data}");
-                    prevNode.NextNode = currentNode.NextNode;
-                    break;
                     
+                    prevNode.NextNode = currentNode.NextNode; //ok
+                    currentNode.NextNode.PrevNode = currentNode.PrevNode; //ok
+                    break;
                 }
                 prevNode = currentNode;
                 currentNode = currentNode.NextNode;
@@ -121,6 +144,15 @@ namespace MetronLabsTest
 
             Console.WriteLine("-----------------------");
 
+            //Show list
+            Console.WriteLine("Reverse List: ");
+            linkedList.DisplayReverseLinkedList();
+
+            Console.WriteLine("-----------------------");
+
+
+
+
             for (int i = 0; i < 10; i++)
             {
                 Node node = linkedList.GetNode(i);
@@ -149,7 +181,14 @@ namespace MetronLabsTest
             Console.WriteLine("After Delete : ");
             linkedList.DisplayLinkedList();
 
- 
+
+            //Show list
+            Console.WriteLine("Reverse List: ");
+            linkedList.DisplayReverseLinkedList();
+
+            Console.WriteLine("-----------------------");
+
+
             Console.ReadKey();
         }
     }
