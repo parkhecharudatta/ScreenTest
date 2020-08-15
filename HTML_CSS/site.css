@@ -1,0 +1,33 @@
+/* site.css */
+
+table,th,td{
+   
+    border: 1px solid white;
+    border-collapse: collapse;
+   text-align: left;
+}
+
+th,td
+{
+    padding: 5px;
+}
+
+th
+{
+    background-color:gainsboro;
+}
+
+header,h2
+{
+    display: inline-block;
+}
+
+button
+{
+    background-color: deepskyblue;
+    border-radius: 6px;
+    height: 30px;
+    width: 60px;
+}
+
+tr{background-color: tomato;}

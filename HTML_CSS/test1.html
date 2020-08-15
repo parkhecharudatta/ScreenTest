@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head> 
+   <title> Test</title> 
+   <link rel="stylesheet" href="site.css" />
+</head>
+
+    <header>
+    <div>
+        <h2>
+            <p id="Heading" contenteditable="false">Issue tracker for BizAnalytics</p>
+        </h2>
+        <button type="button" id="Edit" onclick="myFunction()">Edit</button>
+    </div>
+    </header>
+    
+    <body>
+    <div id="Table">
+        <table style="width:800px">
+            <tr id="TableHeaders">
+              <th>ID</th>
+              <th>Description</th>
+              <th>Status</th>
+            </tr>
+
+            <tr id="FirstRow">
+              <td>1</td>
+              <td>Create login page</td>
+              <td>
+                <select id="Row1Select" name="progresschoice" onchange="myfunctionR1(this)">
+                    <option>Done</option>
+                    <option selected>Not Started</option>
+                    <option >In Progress</option>
+                </select>      
+              </td>
+            </tr>
+           
+            <tr id="SecondRow">
+                <td>2</td>
+                <td>Store encrypted passwords</td>
+                <td>
+                  <select id="Row2Select" name="progresschoice" onchange="myfunctionR2(this)">
+                      <option>Done</option>
+                      <option selected>Not Started</option>
+                      <option >In Progress</option>
+                  </select>      
+                </td>
+              </tr>
+            
+            <tr id="ThirdRow">
+                <td>3</td>
+                <td>Design database tables for usermodels</td>
+                <td>
+                  <select id="Row3Select" name="progresschoice" onchange="myfunctionR3(this)">
+                      <option>Done</option>
+                      <option selected>Not Started</option>
+                      <option >In Progress</option>
+                  </select>      
+                </td>
+            </tr>
+            
+          </table>
+    </div>
+    <script>
+        function myFunction() {
+            
+            var x = document.getElementById("Edit");
+            if(x.textContent==="Done")
+            {
+                x.textContent="Edit";
+                document.getElementById("Heading").contentEditable = "false";
+            }
+            else
+            {
+                document.getElementById("Heading").contentEditable = "true";
+                x.textContent="Done";
+            }
+        }
+
+        function myfunctionR1(sel)
+        {
+            var sel = document.getElementById("Row1Select");
+            var text= sel.options[sel.selectedIndex].text;
+           if(text === "In Progress")
+           {
+                document.getElementById("FirstRow").style.backgroundColor = "lightblue";
+                console.log("In progress");
+           }
+           
+           if(text === "Done")
+            {
+                document.getElementById("FirstRow").style.backgroundColor = "lime";
+                console.log("In progress");
+            }
+
+            if(text === "Not Started")
+            {
+                document.getElementById("FirstRow").style.backgroundColor = "tomato";
+                console.log("In progress");
+            }
+        }
+
+        function myfunctionR2(sel)
+        {
+            var sel = document.getElementById("Row2Select");
+            var text= sel.options[sel.selectedIndex].text;
+           if(text === "In Progress")
+           {
+                document.getElementById("SecondRow").style.backgroundColor = "lightblue";
+                console.log("In progress");
+           }
+           
+           if(text === "Done")
+            {
+                document.getElementById("SecondRow").style.backgroundColor = "lime";
+                console.log("In progress");
+            }
+
+            if(text === "Not Started")
+            {
+                document.getElementById("SecondRow").style.backgroundColor = "tomato";
+                console.log("In progress");
+            }
+        }
+
+        function myfunctionR3(sel)
+        {
+            var sel = document.getElementById("Row3Select");
+            var text= sel.options[sel.selectedIndex].text;
+           if(text === "In Progress")
+           {
+                document.getElementById("ThirdRow").style.backgroundColor = "lightblue";
+                console.log("In progress");
+           }
+           
+           if(text === "Done")
+            {
+                document.getElementById("ThirdRow").style.backgroundColor = "lime";
+                console.log("In progress");
+            }
+            
+            if(text === "Not Started")
+            {
+                document.getElementById("ThirdRow").style.backgroundColor = "tomato";
+                console.log("In progress");
+            }
+        }
+
+        </script>
+</body>
+
+</html>
